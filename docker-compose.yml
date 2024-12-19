@@ -1,0 +1,25 @@
+version: "3.9"  # Or a more recent version if you prefer
+services:
+  mongodb:
+    image: mongo:latest # Use the official MongoDB image
+    ports:
+      - "27018:27017" # Optional: Expose port for external access (like MongoDB Compass)
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root  # Set a root username (optional but recommended for security)
+#      MONGO_INITDB_ROOT_PASSWORD: 1234 # Set a root password (important!)
+    volumes:
+      - mongodb_data:/data/db # Persist MongoDB data across container restarts
+  student: # Name of your Spring Boot application service
+    build: . # This tells Docker Compose to build from your Dockerfile in the current directory
+    ports:
+      - "8080:8080" # Map port 8080 on the host to 8080 in the container
+    depends_on:
+      - mongodb # Ensure MongoDB starts before your app
+    environment:
+      SPRING_DATA_MONGODB_HOST: mongodb # Use the service name 'mongodb'
+      SPRING_DATA_MONGODB_PORT: 27017
+      SPRING_DATA_MONGODB_DATABASE: students
+#      SPRING_DATA_MONGODB_USERNAME: # Match the username from the MongoDB service
+#      SPRING_DATA_MONGODB_PASSWORD: # Match the password from the MongoDB service
+volumes:
+  mongodb_data: # Named volume for MongoDB data persistence
