@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-app
+  labels:
+    app: student-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-app
+  template:
+    metadata:
+      labels:
+        app: student-app
+    spec:
+      containers:
+        - name: student-app
+          image: shiunduzachariah/students-app:latest
+          imagePullPolicy: IfNotPresent # Good practice for local development
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env: # MongoDB Connection Configuration
+            - name: SPRING_DATA_MONGODB_HOST
+              value: mongodb-service # Name of the MongoDB service
+            - name: SPRING_DATA_MONGODB_PORT
+              value: "27017"
+            - name: SPRING_DATA_MONGODB_DATABASE # Optional, if you have a specific database name
+              value: students
+#            - name: SPRING_DATA_MONGODB_USERNAME # Optional, if you have authentication
+#              value: root
+#            - name: SPRING_DATA_MONGODB_PASSWORD # Optional, if you have authentication
+#              value: example
+          resources: # Optional resource limits and requests
+            requests:
+              cpu: 250m # 250 millicores
+              memory: 512Mi # 512 Megabytes
+            limits:
+              cpu: 500m
+              memory: 1Gi
+      restartPolicy: Always
