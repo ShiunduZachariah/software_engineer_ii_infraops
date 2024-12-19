@@ -141,8 +141,9 @@ Initially, the database was empty, so the `GET /students` endpoint returned an e
 ![image](https://github.com/user-attachments/assets/e958e206-c793-4534-8c52-7745147bb28a)
 
 
-##2. Containerizing a Spring Boot Application with MongoDB using Docker
-###2. Containerizing a Spring Boot Application with MongoDB using Docker
+
+
+### 2. Containerizing a Spring Boot Application with MongoDB using Docker
 
 
 This document outlines the process of containerizing a Spring Boot application that uses MongoDB as its database using Docker. This setup is crucial for consistent deployments across different environments, including Kubernetes with Minikube.
@@ -308,8 +309,8 @@ To create a Docker image for a Spring Boot application that can connect to a Mon
 ![image](https://github.com/user-attachments/assets/e610bac0-4bcc-402b-81dc-442a2f5c3063)
 
 
-##3. Setting up CI/CD with GitHub Actions for Docker Image Build and Push
-###3. Setting up CI/CD with GitHub Actions for Docker Image Build and Push
+
+### 3. Setting up CI/CD with GitHub Actions for Docker Image Build and Push
 
 This document describes how to set up a Continuous Integration/Continuous Deployment (CI/CD) pipeline using GitHub Actions to automatically build and push your Docker image to a container registry (Docker Hub in this example) whenever you push changes to your repository.
 
@@ -428,8 +429,8 @@ jobs:
 ![image](https://github.com/user-attachments/assets/354c4622-1779-4d71-856c-8c4758950742)
 ![image](https://github.com/user-attachments/assets/6a3797e1-445a-4bbf-96b8-4d201184c9fb)
 
-##4. Deploying a Spring Boot Application with MongoDB on Minikube
-###4. Deploying a Spring Boot Application with MongoDB on Minikube
+
+### 4. Deploying a Spring Boot Application with MongoDB on Minikube
 
 This document details the process of deploying a Dockerized Spring Boot application that uses MongoDB as its database to a local Kubernetes cluster using Minikube.
 
@@ -630,3 +631,5 @@ This comprehensive documentation should help you successfully deploy your Spring
 ![image](https://github.com/user-attachments/assets/e533bece-dd61-4fe2-a82f-3b144780998a)
 ![image](https://github.com/user-attachments/assets/afda699a-7a20-4ca7-ab76-0acf3ac8c184)
 ![image](https://github.com/user-attachments/assets/b240b8c5-1a46-4514-9820-9179642edc51)
+
+### Thank You.
